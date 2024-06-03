@@ -1,34 +1,139 @@
+/* App.css */
+
 .navbar {
-  background-color: #333;
-  padding: 10px 0;
+    position: fixed;
+    background-color: #343a40; /* Dark background color */
+}
+
+.navbar-brand {
+    font-size: 5.5rem;
+    font-family: cursive;
+    font-weight: bold;
+}
+
+.navbar-toggler {
+    border-color: transparent; /* Remove border color from toggler */
+}
+
+.navbar-toggler-icon {
+    background-color: #ffffff; /* White color for toggler icon */
 }
 
 .navbar-nav {
-  display: flex;
-  justify-content: center;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+    margin-left: auto;
 }
 
-.nav-item {
-  margin: 0 10px;
+.navbar-nav .nav-item {
+    margin-right: 20px;
 }
 
-.nav-item a {
-  color: #fff;
-  text-decoration: none;
-  padding: 5px 10px;
+.navbar-nav .nav-link {
+    color: #ffffff; /* White text color */
+    transition: box-shadow 0.3s ease; /* Add transition for box-shadow */
+    position: relative; /* Ensure proper positioning for pseudo-elements */
 }
 
-.nav-item a:hover {
-  background-color: #555;
-  border-radius: 5px;
+.navbar-nav .nav-link:hover {
+    color: #eeeeee; /* Lighter text color on hover */
+    box-shadow: 0 0 0 100vw #28a745 inset; /* Add full-width box shadow */
 }
 
-.app {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-  padding: 20px;
-  text-align: center;
+
+.btn-success {
+    background-color: #28a745; /* Green button color */
+    border-color: #28a745; /* Green button border color */
+}
+
+.btn-success:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+.welcome-header {
+    color: #2c3e50; /* Dark blue color for the welcome header */
+    text-align: center;
+}
+
+.developer-name {
+    color: #27ae60; /* Green color for the developer name */
+}
+
+.info-text {
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+.highlight {
+    color: #e74c3c; /* Red color for highlighted text */
+}
+
+.about-container,
+.projects-container,
+.contact-container {
+    padding: 20px;
+}
+
+.about-header,
+.projects-header,
+.contact-header {
+    color: #2c3e50; /* Dark blue color for the header */
+    text-align: center;
+}
+
+.about-content {
+    margin-top: 20px;
+}
+
+.about-text {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.project-card {
+    background-color: #f9f9f9; /* Light gray background color for project cards */
+    border-radius: 8px;
+    padding: 20px;
+    transition: transform 0.3s ease; /* Add smooth transition on hover */
+}
+
+.project-card:hover {
+    transform: translateY(-5px); /* Add lift effect on hover */
+}
+
+.project-title {
+    color: #27ae60; /* Green color for project titles */
+}
+
+.project-description {
+    margin-top: 10px;
+}
+
+.contact-info {
+    margin-top: 20px;
+}
+
+.contact-text {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-label {
+    font-weight: bold;
+}
+
+.social-label {
+    font-style: italic;
+    margin-right: 5px;
+}
+
+.contact-form {
+    margin-top: 40px;
+}
+
+.form-header {
+    color: #2c3e50;
 }
