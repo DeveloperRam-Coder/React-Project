@@ -1,139 +1,133 @@
-/* App.css */
-
-.navbar {
-    position: fixed;
-    background-color: #343a40; /* Dark background color */
-}
-
-.navbar-brand {
-    font-size: 5.5rem;
-    font-family: cursive;
-    font-weight: bold;
-}
-
-.navbar-toggler {
-    border-color: transparent; /* Remove border color from toggler */
-}
-
-.navbar-toggler-icon {
-    background-color: #ffffff; /* White color for toggler icon */
-}
-
-.navbar-nav {
-    margin-left: auto;
-}
-
-.navbar-nav .nav-item {
-    margin-right: 20px;
-}
-
-.navbar-nav .nav-link {
-    color: #ffffff; /* White text color */
-    transition: box-shadow 0.3s ease; /* Add transition for box-shadow */
-    position: relative; /* Ensure proper positioning for pseudo-elements */
-}
-
-.navbar-nav .nav-link:hover {
-    color: #eeeeee; /* Lighter text color on hover */
-    box-shadow: 0 0 0 100vw #28a745 inset; /* Add full-width box shadow */
-}
-
-
-.btn-success {
-    background-color: #28a745; /* Green button color */
-    border-color: #28a745; /* Green button border color */
-}
-
-.btn-success:hover {
-    background-color: #218838; /* Darker green on hover */
-}
-
-.welcome-header {
-    color: #2c3e50; /* Dark blue color for the welcome header */
+/* General styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  .app {
     text-align: center;
-}
-
-.developer-name {
-    color: #27ae60; /* Green color for the developer name */
-}
-
-.info-text {
+  }
+  
+  /* Navigation styles */
+  .navbar {
+    position: sticky;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background-color: #343a40;
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem;
+    color: #ffffff;
+    font-weight: bold;
+  }
+  
+  .navbar-nav .nav-link {
+    color: #ffffff;
+    position: relative;
+    margin: 0 15px;
+  }
+  
+  .navbar-nav .nav-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #28a745;
+    transition: width 0.3s;
+  }
+  
+  .navbar-nav .nav-link:hover::after {
+    width: 100%;
+  }
+  
+  
+  .btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+  }
+  
+  .btn-success:hover {
+    background-color: #218838;
+  }
+  
+  /* Section styles */
+  .sections-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px; /* Adjusted to compensate for fixed navbar */
+  }
+  
+  .section {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .full-height-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .welcome-header, .about-header, .projects-header, .contact-header {
+    color: #2c3e50;
+    margin-bottom: 20px;
+  }
+  
+  .developer-info, .about-content, .contact-info {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  
+  .info-text, .about-text, .contact-text {
     margin: 10px 0;
     font-size: 1.1rem;
-}
-
-.highlight {
-    color: #e74c3c; /* Red color for highlighted text */
-}
-
-.about-container,
-.projects-container,
-.contact-container {
-    padding: 20px;
-}
-
-.about-header,
-.projects-header,
-.contact-header {
-    color: #2c3e50; /* Dark blue color for the header */
-    text-align: center;
-}
-
-.about-content {
-    margin-top: 20px;
-}
-
-.about-text {
-    margin-bottom: 10px;
-    font-size: 1.1rem;
-}
-
-.project-card {
-    background-color: #f9f9f9; /* Light gray background color for project cards */
-    border-radius: 8px;
-    padding: 20px;
-    transition: transform 0.3s ease; /* Add smooth transition on hover */
-}
-
-.project-card:hover {
-    transform: translateY(-5px); /* Add lift effect on hover */
-}
-
-.project-title {
-    color: #27ae60; /* Green color for project titles */
-}
-
-.project-description {
-    margin-top: 10px;
-}
-
-.contact-info {
-    margin-top: 20px;
-}
-
-.contact-text {
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-}
-
-.contact-list {
+  }
+  
+  .highlight {
+    color: #e74c3c;
+  }
+  
+  .contact-list {
     list-style: none;
     padding: 0;
-}
-
-.contact-label {
+  }
+  
+  .contact-label {
     font-weight: bold;
-}
-
-.social-label {
+  }
+  
+  .social-label {
     font-style: italic;
     margin-right: 5px;
-}
-
-.contact-form {
+  }
+  
+  .contact-form {
     margin-top: 40px;
-}
-
-.form-header {
+  }
+  
+  .form-header {
     color: #2c3e50;
-}
+  }
+  
+  .hero-banner {
+    background-image: url('assets/k033_ccf0_220705.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+  }
+  

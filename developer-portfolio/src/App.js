@@ -1,5 +1,3 @@
-// App.jsx
-
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
@@ -25,7 +23,7 @@ const Navigation = () => {
               <a href="#contact" className="nav-link">Contact</a>
             </li>
             <li className="nav-item">
-              <button className="btn btn-success ml-lg-2 ">
+              <button className="btn btn-success ml-lg-2">
                 <span className="resume-icon">📄</span>
                 <span>Resume</span>
               </button>
@@ -40,7 +38,7 @@ const Navigation = () => {
 // Home Component
 const Home = () => {
   return (
-    <div id="home" className="full-height-section">
+    <div id="home" className="section full-height-section hero-banner">
       <h2 className="welcome-header">Welcome to My Portfolio</h2>
       <div className="developer-info">
         <h3 className="developer-name">Software Developer: Ramgopal</h3>
@@ -58,7 +56,7 @@ const Home = () => {
 // About Component
 const About = () => {
   return (
-    <div id="about" className="full-height-section">
+    <div id="about" className="section full-height-section">
       <h2 className="about-header">About Me</h2>
       <div className="about-content">
         <p className="about-text">I am a passionate and dedicated software developer with a strong interest in creating innovative solutions to complex problems.</p>
@@ -74,7 +72,7 @@ const About = () => {
 // Projects Component
 const Projects = () => {
   return (
-    <div id="projects" className="full-height-section">
+    <div id="projects" className="section full-height-section">
       <h2 className="projects-header">Projects</h2>
       {/* Project Cards */}
     </div>
@@ -84,7 +82,7 @@ const Projects = () => {
 // Contact Component
 const Contact = () => {
   return (
-    <div id="contact" className="full-height-section">
+    <div id="contact" className="section full-height-section">
       <h2 className="contact-header">Contact Me</h2>
       <div className="contact-info">
         <p className="contact-text">Feel free to reach out to me for any inquiries or collaborations.</p>
@@ -111,10 +109,12 @@ function App() {
   return (
     <div className="app">
       <Navigation />
-      <Home />
-      <About />
-      <Projects />
-      <Contact />
+      <div className="sections-container">
+        <Home />
+        <About />
+        <Projects />
+        <Contact />
+      </div>
     </div>
   );
 }
