@@ -39,9 +39,9 @@ const Navigation = () => {
 const Home = () => {
   return (
     <div id="home" className="section full-height-section hero-banner">
-      <h2 className="welcome-header">Welcome to My Portfolio</h2>
+      <h1 className="welcome-header">Welcome to My Portfolio</h1>
       <div className="developer-info">
-        <h3 className="developer-name">Software Developer: Ramgopal</h3>
+        <h2 className="developer-name">Software Developer: Ramgopal</h2>
         <p className="info-text">Passionate about creating innovative software solutions.</p>
         <p className="info-text">Experienced in front-end and back-end development.</p>
         <p className="info-text">Proficient in <span className="highlight">JavaScript</span>, <span className="highlight">React</span>, <span className="highlight">Node.js</span>, HTML, CSS, and more.</p>
@@ -71,10 +71,26 @@ const About = () => {
 
 // Projects Component
 const Projects = () => {
+  const projectData = [
+    { id: 1, title: "Project One", description: "Description of project one." },
+    { id: 2, title: "Project Two", description: "Description of project two." },
+    { id: 3, title: "Project Three", description: "Description of project three." },
+    { id: 4, title: "Project Four", description: "Description of project four." },
+    { id: 5, title: "Project Five", description: "Description of project five." },
+    { id: 6, title: "Project Six", description: "Description of project six." },
+  ];
+
   return (
     <div id="projects" className="section full-height-section">
       <h2 className="projects-header">Projects</h2>
-      {/* Project Cards */}
+      <div className="projects-container">
+        {projectData.map((project) => (
+          <div key={project.id} className="project-card">
+            <h3 className="project-title">{project.title}</h3>
+            <p className="project-description">{project.description}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
@@ -91,16 +107,26 @@ const Contact = () => {
           <li><span className="contact-label">Phone:</span> +1234567890</li>
           <li><span className="contact-label">Social Media:</span></li>
           <ul>
-            <li><span className="social-label">Twitter:</span> <a href="https://twitter.com/example">@example</a></li>
-            <li><span className="social-label">LinkedIn:</span> <a href="https://linkedin.com/in/example">Example Profile</a></li>
+            <li>
+              <span className="social-label">Twitter:</span>
+              <a href="https://twitter.com/example">
+                <i class="fab fa-twitter"></i> @example
+              </a>
+            </li>
+            <li>
+              <span className="social-label">LinkedIn:</span>
+              <a href="https://linkedin.com/in/example">
+                <i class="fab fa-linkedin"></i> Example Profile
+              </a>
+            </li>
           </ul>
         </ul>
       </div>
       <div className="contact-form">
         <h3 className="form-header">Send me a message:</h3>
-        {/* Add a contact form here */}
       </div>
     </div>
+
   );
 };
 

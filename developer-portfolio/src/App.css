@@ -1,15 +1,18 @@
-/* General styles */
-body, html {
+  /* General styles */
+  body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
   }
-  
-  .app {
-    text-align: center;
+
+  html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
   }
-  
+
   /* Navigation styles */
   .navbar {
     position: sticky;
@@ -18,19 +21,21 @@ body, html {
     z-index: 1000;
     background-color: #343a40;
   }
-  
+
   .navbar-brand {
     font-size: 1.5rem;
     color: #ffffff;
     font-weight: bold;
+    font-family: 'Courier New', monospace;
+
   }
-  
+
   .navbar-nav .nav-link {
     color: #ffffff;
     position: relative;
     margin: 0 15px;
   }
-  
+
   .navbar-nav .nav-link::after {
     content: '';
     display: block;
@@ -39,95 +44,174 @@ body, html {
     background: #28a745;
     transition: width 0.3s;
   }
-  
+
   .navbar-nav .nav-link:hover::after {
     width: 100%;
   }
-  
-  
+
   .btn-success {
     background-color: #28a745;
     border-color: #28a745;
   }
-  
+
   .btn-success:hover {
     background-color: #218838;
   }
-  
+
   /* Section styles */
   .sections-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-top: 80px; /* Adjusted to compensate for fixed navbar */
   }
-  
+
   .section {
     width: 100%;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 20px;
+    border-bottom: 2px solid #d3d3d3;
+    font-weight: bold;
+
   }
-  
+
   .full-height-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    /* background-color: #ffebee; */
+    font-family: 'Courier New', monospace;
+    color: #d32f2f;
     height: 100vh;
-  }
-  
-  .welcome-header, .about-header, .projects-header, .contact-header {
-    color: #2c3e50;
-    margin-bottom: 20px;
-  }
-  
-  .developer-info, .about-content, .contact-info {
-    max-width: 800px;
-    margin: 0 auto;
+    border-bottom: 2px solid #d3d3d3;
     text-align: left;
+    background-color: #343a40;
+    font-weight: bold;
+
   }
-  
-  .info-text, .about-text, .contact-text {
-    margin: 10px 0;
+.developer-name{
+  font-weight: bold;
+
+}
+.hero-banner {
+  /* background-image: url('assets/df.jpg'); */
+  background-color: #343a40;
+
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  font-weight: bold;
+  backdrop-filter: 100%;
+}
+
+
+  .welcome-header {
+    color: #ffffff;
+    font-weight: bold;
+
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-top: -450px;
+  }
+
+  .about-header {
+
+    color: #ffffff;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-top: -450px;
+  }
+
+  .projects-header {
+    color: #ffffff;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-top: -450px;
+  }
+
+  .contact-header {
+    color: #ffffff;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-top: -450px;
+  }
+
+  .developer-info {
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #ffffff;
+    margin-left: 20px;
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .about-content {
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #ffffff;
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+
+  .contact-info {
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #ffffff;
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+
+  .info-text {
+    font-size: 1.1rem;
+    font-weight: bold;
+
+  }
+
+  .about-text {
     font-size: 1.1rem;
   }
-  
-  .highlight {
-    color: #e74c3c;
+
+  .contact-text {
+    font-size: 1.1rem;
   }
-  
-  .contact-list {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .contact-label {
-    font-weight: bold;
-  }
-  
-  .social-label {
-    font-style: italic;
-    margin-right: 5px;
-  }
-  
-  .contact-form {
-    margin-top: 40px;
-  }
-  
-  .form-header {
-    color: #2c3e50;
-  }
-  
-  .hero-banner {
-    background-image: url('assets/k033_ccf0_220705.jpg');
-    background-size: cover;
-    background-position: center;
+
+  /* Projects section styles */
+  .projects-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #ffffff;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 20px;
+    font-weight: bold;
+
   }
-  
+
+  .project-card {
+    align-items: center;
+    flex: 1 1 calc(33.333% - 40px);
+    /* Three cards per row with spacing */
+    max-width: calc(33.333% - 40px);
+    background-color: #ffffff;
+    border: 1px solid #d3d3d3;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+  }
+
+  .project-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #2c3e50;
+    font-weight: bold;
+
+  }
+
+  .project-description {
+    font-size: 1rem;
+    color: #7f8c8d;
+  }
