@@ -75,9 +75,6 @@ const Projects = () => {
     { id: 1, title: "Project One", description: "Description of project one." },
     { id: 2, title: "Project Two", description: "Description of project two." },
     { id: 3, title: "Project Three", description: "Description of project three." },
-    { id: 4, title: "Project Four", description: "Description of project four." },
-    { id: 5, title: "Project Five", description: "Description of project five." },
-    { id: 6, title: "Project Six", description: "Description of project six." },
   ];
 
   return (
@@ -86,6 +83,8 @@ const Projects = () => {
       <div className="projects-container">
         {projectData.map((project) => (
           <div key={project.id} className="project-card">
+                        <img className="card-img-top" src="https://media.istockphoto.com/id/1494104649/photo/ai-chatbot-artificial-intelligence-digital-concept.jpg?s=2048x2048&w=is&k=20&c=AwtJ4gMG5S2ryVd6pYeiWm2lD10-Lr593yhZDtrK4fs=" alt="Card image cap" />
+
             <h3 className="project-title">{project.title}</h3>
             <p className="project-description">{project.description}</p>
           </div>
