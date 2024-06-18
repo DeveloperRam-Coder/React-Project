@@ -1,9 +1,38 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import '@fortawesome/fontawesome-svg-core/styles.css';
 import './App.css';
+import profileImage from './assets/pic.jpeg';
+import TwitterIcon from './assets/twitter.png'; // Import Twitter icon
+import LinkedInIcon from './assets/linkedin.png'; // Import LinkedIn icon
+import InstagramIcon from './assets/instagram.png'; // Import LinkedIn icon
+import YoutubeIcon from './assets/youtube.png'; // Import LinkedIn icon
+import EmailIcon from './assets/social.png'; // Import LinkedIn icon
+import PhoneIcon from './assets/PhoneIcon.png'; // Import LinkedIn icon
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons';
+import ResumeImage from './assets/resume.jpg'; // Import the resume image
+import projectImage1 from './assets/project3.jpg'; // Import your project images
+import projectImage2 from './assets/project2.jpg';
+import projectImage3 from './assets/project3.jpg';
+
+
 
 // Navigation Component
 const Navigation = () => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
+  const scrollToBottom = () => {
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark py-3">
       <div className="container justify-content-center">
@@ -22,14 +51,16 @@ const Navigation = () => {
             <li className="nav-item">
               <a href="#contact" className="nav-link">Contact</a>
             </li>
-            <li className="nav-item">
-              <button className="btn btn-success ml-lg-2">
-                <span className="resume-icon">📄</span>
-                <span>Resume</span>
-              </button>
-            </li>
           </ul>
         </div>
+      </div>
+      <div className="fixed-bottom mr-4 mb-4">
+        <button className="btn btn-outline-light mx-2" onClick={scrollToTop}>
+          <FontAwesomeIcon icon={faArrowUp} />
+        </button>
+        <button className="btn btn-outline-light mx-2" onClick={scrollToBottom}>
+          <FontAwesomeIcon icon={faArrowDown} />
+        </button>
       </div>
     </nav>
   );
@@ -40,15 +71,39 @@ const Home = () => {
   return (
     <div id="home" className="section full-height-section hero-banner">
       <h1 className="welcome-header">Welcome to My Portfolio</h1>
+      <h1 className="welcome-header">Hii,I'am Ram</h1>
       <div className="developer-info">
-        <h2 className="developer-name">Software Developer: Ramgopal</h2>
-        <p className="info-text">Passionate about creating innovative software solutions.</p>
-        <p className="info-text">Experienced in front-end and back-end development.</p>
-        <p className="info-text">Proficient in <span className="highlight">JavaScript</span>, <span className="highlight">React</span>, <span className="highlight">Node.js</span>, HTML, CSS, and more.</p>
-        <p className="info-text">Skilled in database management using <span className="highlight">MongoDB</span>, <span className="highlight">MySQL</span>, and <span className="highlight">PostgreSQL</span>.</p>
-        <p className="info-text">Familiar with cloud platforms such as <span className="highlight">AWS</span> and <span className="highlight">Azure</span>.</p>
-        <p className="info-text">Ready to collaborate on exciting projects and contribute to success.</p>
+        <div>
+          <h2 className="developer-name">Software Developer: Ramgopal</h2>
+          <p className="info-text">Passionate about creating innovative software solutions.</p>
+          <p className="info-text">Experienced in front-end and back-end development.</p>
+          <p className="info-text">Proficient in <span className="highlight">JavaScript</span>, <span className="highlight">React</span>, <span className="highlight">Node.js</span>, HTML, CSS, and more.</p>
+          <p className="info-text">Skilled in database management using <span className="highlight">MongoDB</span>, <span className="highlight">MySQL</span>, and <span className="highlight">PostgreSQL</span>.</p>
+          <p className="info-text">Familiar with cloud platforms such as <span className="highlight">AWS</span> and <span className="highlight">Azure</span>.</p>
+          <p className="info-text">Ready to collaborate on exciting projects and contribute to success.</p>
+        </div>
       </div>
+      <img src={profileImage} alt="Profile" className="profile-image" />
+      {/* Proficient in Section */}
+      {/* <div className="proficient-in-section">
+        <h3 className="section-header">Proficient in:</h3>
+        <div className="programming-buttons">
+          <button className="btn btn-outline-light btn-lg mx-2 my-2">JavaScript</button>
+          <button className="btn btn-outline-light btn-lg mx-2 my-2">React</button>
+          <br />
+          <button className="btn btn-outline-light btn-lg mx-2 my-2">Node.js</button>
+          <button className="btn btn-outline-light btn-lg mx-2 my-2">HTML</button>
+          <br />
+          <button className="btn btn-outline-light btn-lg mx-2 my-2">CSS</button>
+          <button className="btn btn-outline-light btn-lg mx-2 my-2">MongoDB</button>
+          <br />
+          <button className="btn btn-outline-light btn-lg mx-2 my-2">MySQL</button>
+          <button className="btn btn-outline-light btn-lg mx-2 my-2">PostgreSQL</button>
+          <br />
+          <button className="btn btn-outline-light btn-lg mx-2 my-2">AWS</button>
+          <button className="btn btn-outline-light btn-lg mx-2 my-2">Azure</button>
+        </div>
+      </div> */}
     </div>
   );
 };
@@ -58,13 +113,58 @@ const About = () => {
   return (
     <div id="about" className="section full-height-section">
       <h2 className="about-header">About Me</h2>
-      <div className="about-content">
-        <p className="about-text">I am a passionate and dedicated software developer with a strong interest in creating innovative solutions to complex problems.</p>
-        <p className="about-text">My journey in software development started with my curiosity for technology and my desire to build things that make a difference.</p>
-        <p className="about-text">I have experience in both front-end and back-end development, with proficiency in <span className="highlight">JavaScript</span>, <span className="highlight">React</span>, <span className="highlight">Node.js</span>, HTML, CSS, and more.</p>
-        <p className="about-text">I enjoy learning new technologies and keeping up with industry trends to continually improve my skills and stay ahead in this rapidly evolving field.</p>
-        <p className="about-text">Outside of coding, I love exploring the outdoors, reading books, and spending time with friends and family.</p>
-      </div>
+
+      {/* Technical Skills Section */}
+      <section className="about-section">
+        <h3 className="section-subheader">Technical Skills</h3>
+        <div className="about-content">
+          <p className="about-text">I have experience in both front-end and back-end development, with proficiency in <span className="highlight">JavaScript</span>, <span className="highlight">React</span>, <span className="highlight">Node.js</span>, HTML, CSS, and more.</p>
+          <p className="about-text">I enjoy learning new technologies and keeping up with industry trends to continually improve my skills and stay ahead in this rapidly evolving field.</p>
+          <div className="programming-buttons">
+            <button className="btn btn-outline-light btn-lg mx-2">JavaScript</button>
+            <button className="btn btn-outline-light btn-lg mx-2">React</button>
+            <button className="btn btn-outline-light btn-lg mx-2">Node.js</button>
+            <button className="btn btn-outline-light btn-lg mx-2">HTML</button>
+            <button className="btn btn-outline-light btn-lg mx-2">CSS</button>
+            <button className="btn btn-outline-light btn-lg mx-2">MongoDB</button>
+            <button className="btn btn-outline-light btn-lg mx-2">MySQL</button>
+            <button className="btn btn-outline-light btn-lg mx-2">PostgreSQL</button>
+            <button className="btn btn-outline-light btn-lg mx-2">AWS</button>
+            <button className="btn btn-outline-light btn-lg mx-2">Azure</button>
+          </div>
+        </div>
+      </section>
+
+      {/* Additional Skills Section */}
+      <section className="about-section">
+        <h3 className="section-subheader">Additional Skills</h3>
+        <div className="about-content">
+          <p className="about-text">Apart from technical skills, I possess proficiency in areas such as project management, problem-solving, and effective communication.</p>
+          <div className="additional-skills-buttons">
+            <button className="btn btn-outline-light btn-lg mx-2">Project Management</button>
+            <button className="btn btn-outline-light btn-lg mx-2">Problem-Solving</button>
+            <button className="btn btn-outline-light btn-lg mx-2">Effective Communication</button>
+            <button className="btn btn-outline-light btn-lg mx-2">Team Collaboration</button>
+            <button className="btn btn-outline-light btn-lg mx-2">Agile Methodologies</button>
+          </div>
+        </div>
+      </section>
+
+      {/* Personal Interests Section */}
+      <section className="about-section">
+        <h3 className="section-subheader">Personal Interests</h3>
+        <div className="about-content">
+          <p className="about-text">Outside of coding, I love exploring the outdoors, reading books, and spending time with friends and family.</p>
+          <div className="personal-interests-buttons">
+            <button className="btn btn-outline-light btn-lg mx-2">Hiking</button>
+            <button className="btn btn-outline-light btn-lg mx-2">Reading</button>
+            <button className="btn btn-outline-light btn-lg mx-2">Traveling</button>
+            <button className="btn btn-outline-light btn-lg mx-2">Photography</button>
+            <button className="btn btn-outline-light btn-lg mx-2">Music</button>
+            <button className="btn btn-outline-light btn-lg mx-2">Cooking</button>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
@@ -72,9 +172,9 @@ const About = () => {
 // Projects Component
 const Projects = () => {
   const projectData = [
-    { id: 1, title: "Project One", description: "Description of project one." },
-    { id: 2, title: "Project Two", description: "Description of project two." },
-    { id: 3, title: "Project Three", description: "Description of project three." },
+    { id: 1, title: "Project One", description: "Description of project one.", image: projectImage1 },
+    { id: 2, title: "Project Two", description: "Description of project two.", image: projectImage2 },
+    { id: 3, title: "Project Three", description: "Description of project three.", image: projectImage3 },
   ];
 
   return (
@@ -83,10 +183,14 @@ const Projects = () => {
       <div className="projects-container">
         {projectData.map((project) => (
           <div key={project.id} className="project-card">
-                        <img className="card-img-top" src="https://media.istockphoto.com/id/1494104649/photo/ai-chatbot-artificial-intelligence-digital-concept.jpg?s=2048x2048&w=is&k=20&c=AwtJ4gMG5S2ryVd6pYeiWm2lD10-Lr593yhZDtrK4fs=" alt="Card image cap" />
-
-            <h3 className="project-title">{project.title}</h3>
-            <p className="project-description">{project.description}</p>
+            <div className="card bg-light">
+              <img src={project.image} className="card-img-top" alt={`Project ${project.id}`} />
+              <div className="card-body">
+                <h3 className="card-title">{project.title}</h3>
+                <p className="card-text">{project.description}</p>
+                <a href="#" className="btn btn-primary stretched-link">View Project</a>
+              </div>
+            </div>
           </div>
         ))}
       </div>
@@ -94,38 +198,61 @@ const Projects = () => {
   );
 };
 
-// Contact Component
 const Contact = () => {
   return (
     <div id="contact" className="section full-height-section">
-      <h2 className="contact-header">Contact Me</h2>
-      <div className="contact-info">
-        <p className="contact-text">Feel free to reach out to me for any inquiries or collaborations.</p>
-        <ul className="contact-list">
-          <li><span className="contact-label">Email:</span> example@example.com</li>
-          <li><span className="contact-label">Phone:</span> +1234567890</li>
-          <li><span className="contact-label">Social Media:</span></li>
-          <ul>
-            <li>
-              <span className="social-label">Twitter:</span>
-              <a href="https://twitter.com/example">
-                <i class="fab fa-twitter"></i> @example
-              </a>
-            </li>
-            <li>
-              <span className="social-label">LinkedIn:</span>
-              <a href="https://linkedin.com/in/example">
-                <i class="fab fa-linkedin"></i> Example Profile
-              </a>
-            </li>
-          </ul>
-        </ul>
-      </div>
-      <div className="contact-form">
-        <h3 className="form-header">Send me a message:</h3>
+      <div className="container">
+        <h2 className="contact-header text-center mb-4">Contact Me</h2>
+        <div className="row justify-content-center">
+          <div className="col-md-8">
+            <div className="contact-info text-center mb-4">
+              <p className="contact-text">Feel free to reach out to me for any inquiries or collaborations.</p>
+              <ul className="contact-list list-unstyled d-flex justify-content-center flex-wrap">
+                <li className="mx-3">
+                  <a href="mailto:example@example.com" className="btn btn-outline-light social-button">
+                    <img src={EmailIcon} alt="EmailIcon" className="social-icon" /> Email
+                  </a>
+                </li>
+                <li className="mx-3">
+                  <a href="tel:+1234567890" className="btn btn-outline-light social-button">
+                    <img src={PhoneIcon} alt="PhoneIcon" className="social-icon" /> Phone
+                  </a>
+                </li>
+                <li className="mx-3">
+                  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="btn btn-outline-light social-button">
+                    <img src={TwitterIcon} alt="Twitter" className="social-icon" /> Twitter
+                  </a>
+                </li>
+                <li className="mx-3">
+                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="btn btn-outline-light social-button">
+                    <img src={LinkedInIcon} alt="LinkedInIcon" className="social-icon" /> LinkedIn
+                  </a>
+                </li>
+                <li className="mx-3">
+                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="btn btn-outline-light social-button">
+                    <img src={InstagramIcon} alt="InstagramIcon" className="social-icon" /> Instagram
+                  </a>
+                </li>
+                <li className="mx-3">
+                  <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="btn btn-outline-light social-button">
+                    <img src={YoutubeIcon} alt="YoutubeIcon" className="social-icon" /> Youtube
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div className="row justify-content-center">
+          <div className="col-md-8">
+            <div className="contact-form text-center">
+              <h3 className="form-header mb-4">Send me a message:</h3>
+              <button className="btn btn-success btn-lg">Send Message</button>
+              {/* Add your contact form or further form elements here */}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-
   );
 };
 
